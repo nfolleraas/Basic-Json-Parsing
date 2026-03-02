@@ -1,0 +1,57 @@
+{
+  "college": {
+    "name": "Riverside Tech University",
+    "founded": 1985,
+    "location": {
+      "city": "Austin",
+      "state": "TX",
+      "zipCode": "78701"
+    },
+    "totalStudents": 12400,
+    "departments": ["Computer Science", "Engineering", "Business", "Arts"]
+  },
+  "students": [
+    {
+      "id": 1001,
+      "name": "Alice Chen",
+      "age": 21,
+      "gpa": 3.8,
+      "isEnrolled": true,
+      "major": "Computer Science",
+      "courses": ["Data Structures", "Algorithms", "Mobile Dev"],
+      "address": {
+        "street": "123 Maple St",
+        "city": "Austin",
+        "zipCode": "78702"
+      }
+    },
+    {
+      "id": 1002,
+      "name": "Marcus Rivera",
+      "age": 23,
+      "gpa": 3.2,
+      "isEnrolled": true,
+      "major": "Business",
+      "courses": ["Marketing", "Finance", "Economics"],
+      "address": {
+        "street": "456 Oak Ave",
+        "city": "Austin",
+        "zipCode": "78703"
+      }
+    },
+    {
+      "id": 1003,
+      "name": "Sara Patel",
+      "age": 20,
+      "gpa": 3.95,
+      "isEnrolled": false,
+      "major": "Engineering",
+      "courses": [],
+      "address": {
+        "street": "789 Pine Rd",
+        "city": "Round Rock",
+        "zipCode": "78664"
+      }
+    }
+  ]
+}
