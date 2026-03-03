@@ -30,4 +30,15 @@ class College {
       departments: departments,
     );
   }
+
+  @override
+  String toString() {
+    return """
+    Name of College: $name
+    Founded in: $foundedYear
+    Location: ${location.city}, ${location.state}, ${location.zipCode}
+    Total students: $totalStudents
+    Departments: $departments
+    """;
+  }
 }

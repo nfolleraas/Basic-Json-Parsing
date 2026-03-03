@@ -8,7 +8,7 @@
             "name": "Dart",
             "type": "dart",
             "request": "launch",
-            "program": "bin/basic_json_parsing.dart"
+            "program": "bin/main.dart"
         },
     ]
 }
