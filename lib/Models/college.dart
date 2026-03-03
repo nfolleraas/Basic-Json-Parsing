@@ -18,9 +18,9 @@ class College {
   factory College.fromJson(Map<String, dynamic> data) {
     final name = data['name'] as String;
     final foundedYear = data['founded'] as int;
-    final location = data['location'] as Location;
+    final location = Location.fromJson(data['location']);
     final totalStudents = data['totalStudents'] as int;
-    final departments = data['zipCode'] as List<String>;
+    final departments = data['departments'].cast<String>();
 
     return College(
       name: name,
