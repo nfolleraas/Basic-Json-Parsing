@@ -1,10 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:basic_json_parsing/api_key.dart';
-import 'package:http/http.dart' as http;
 import 'package:basic_json_parsing/Models/student.dart';
 import 'package:basic_json_parsing/Models/college.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 void parseJson() {
   // Read raw JSON string from file
@@ -31,7 +30,7 @@ Future<void> fetchMovieData() async {
     host: 'api.themoviedb.org',
     path: '/3/movie/now_playing',
     queryParameters: {
-      'api_key': tmdbApiKey,
+      'api_key': dotenv.env['TMDB_KEY'],
     },
   ).toString();
 
