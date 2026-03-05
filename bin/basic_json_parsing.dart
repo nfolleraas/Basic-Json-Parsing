@@ -1,9 +1,9 @@
 import 'package:basic_json_parsing/main.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:dotenv/dotenv.dart';
 
 void main(List<String> arguments) {
-  dotenv.load();
+  final env = DotEnv(includePlatformEnvironment: true)..load();
 
   // parseJson();
-  fetchMovieData();
+  fetchMovieData(env);
 }

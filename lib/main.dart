@@ -3,7 +3,8 @@ import 'dart:io';
 
 import 'package:basic_json_parsing/Models/student.dart';
 import 'package:basic_json_parsing/Models/college.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:dotenv/dotenv.dart';
+import 'package:http/http.dart' as http;
 
 void parseJson() {
   // Read raw JSON string from file
@@ -24,22 +25,23 @@ void parseJson() {
 
 }
 
-Future<void> fetchMovieData() async {
+Future<void> fetchMovieData(DotEnv env) async {
   final url = Uri(
     scheme: 'https',
     host: 'api.themoviedb.org',
     path: '/3/movie/now_playing',
-    queryParameters: {
-      'api_key': dotenv.env['TMDB_KEY'],
-    },
-  ).toString();
+  );
+
+  print(env['TMDB_KEY']);
 
   try {
-    final response = await http.get(url);
+    final response = await http.get(url, headers: {
+      'Authorization': 'Bearer ${env['TMDB_KEY']}',
+    });
 
     // Check if response is successful (2xx is OK)
     if (response.statusCode == 200) {
-      print(response.toString());
+      print(response.body);
     }
     else {
       print('Failed to load data: ${response.statusCode}');
